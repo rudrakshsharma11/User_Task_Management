@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <app-navbar></app-navbar>
+    </div>
+
+   
+
+    <div style="margin-top: 170px">
+      <table class="horizontal-table">
+        <thead>
+          <tr>
+            <th>TaskID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Deadline</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of taskData; let i = index">
+            <!-- <td>
+              <mat-icon
+                class="mat-icon-main"
+                svgIcon="Edit-up"
+                aria-hidden="false"
+                aria-label="Toggle Password Visibility"
+              ></mat-icon>
+              <mat-icon
+                class="mat-icon-main"
+                svgIcon="Del-up"
+                aria-hidden="false"
+                aria-label="Toggle Password Visibility"
+              ></mat-icon>
+            </td> -->
+            
+
+            <td>{{ person.task.taskId }}</td>
+            <td>{{ person.title }}</td>
+            <td>{{ person.description }}</td>
+            <td>{{ person.priority }}</td>
+            <td>{{ person.deadline }}</td>
+            <td>{{ person.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

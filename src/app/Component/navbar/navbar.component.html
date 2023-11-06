@@ -1,0 +1,135 @@
+<!--NAVBAR-->
+<mat-toolbar
+  color="primary"
+  style="background-color: rgb(46, 60, 84, 255); height: 110px"
+>
+  <mat-toolbar-row style="min-height: 40px; height: 60px">
+    <img
+      src="../../assets/logo.png"
+      style="height: 30px; width: 200px"
+      alt="cozentus-logo"
+    />
+    <span class="example-spacer"></span>
+    <div class="logo ml-auto justify-content-spacearound" style="display: flex">
+      <div class="circle">
+        <span
+          class="dot mr-2"
+          style="
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+          "
+          >RD</span
+        >
+      </div>
+      <div class="name">
+        <h4
+          style="
+            color: white;
+            font-weight: 100;
+            margin-top: 13px;
+            margin-left: 4px;
+            font-size: 17px;
+          "
+          class="mr-2"
+        >
+          Rudraksh Sharma
+        </h4>
+      </div>
+      <div class="downlogo" style="background-color: black;">
+        <span>
+          <button
+            mat-stroked-button
+            style="background-color: transparent; color:red; border: none"
+            (click)="toggleDropdown()"
+          ></button>
+          <ul
+            class="dropdown-menu"
+            [ngStyle]="{ display: isDropdownOpen ? 'block' : 'none' }"
+          >
+            <li class="dropdown-item">
+              <button class="btn-per">Change Password</button>
+            </li>
+            <li class="dropdown-item">
+              <button
+                mat-stroked-button
+                style="
+                  background-color: transparent;
+                  color: rgb(255, 255, 255);
+                  border: none;
+                "
+                (click)="logout()"
+              >
+                Sign Out
+              </button>
+            </li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row style="min-height: 40px; height: 40px">
+    <button
+      mat-stroked-button
+      style="
+        background-color: transparent;
+        color: white;
+        border: none;
+        padding-right: 15px;
+      "
+      [ngClass]="{ 'button-clicked': isHomeButtonClicked }"
+      (click)="handleButtonClick('home')"
+      routerLink="/home"
+    >
+      Create Task
+    </button>
+    <button
+      mat-stroked-button
+      style="
+        background-color: transparent;
+        color: white;
+        border: none;
+        margin-left: 10px;
+        padding-right: 15px;
+      "
+      [ngClass]="{ 'button-clicked': isExamsButtonClicked }"
+      (click)="handleButtonClick('exams')"
+      routerLink="/view_profile"
+    >
+      View Profile
+    </button>
+    <button
+      mat-stroked-button
+      style="
+        background-color: transparent;
+        color: white;
+        border: none;
+        margin-left: 10px;
+        padding-right: 15px;
+      "
+      [ngClass]="{ 'button-clicked': isAssigmentButtonClicked }"
+    
+    >
+      View Task info
+    </button>
+    <button
+      mat-stroked-button
+      style="
+        background-color: transparent;
+        color: white;
+        border: none;
+        margin-left: 10px;
+        padding-right: 15px;
+      "
+      data-button-id="home"
+      routerLink="/register"
+    >
+      Create user
+    </button>
+    <span style="margin-left: auto"></span>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,28 @@
+
+.horizontal-table {
+    width: 97%;
+    border-collapse: collapse;
+    position: relative;
+    left: 20px;
+    bottom: 75px;
+    border: none !important;
+    }
+     
+    .horizontal-table th, .horizontal-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    }
+     
+    .horizontal-table th {
+     
+    font-weight: 600;
+    }
+     
+    .horizontal-table tr:nth-child(odd) {
+      background-color: #f6f8fa; /* Background color for odd rows */
+    }
+     
+    .horizontal-table tr:nth-child(even) {
+      background-color:white; /* Background color for even rows */
+    }

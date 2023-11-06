@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   
+  </head>
+  <body>
+    <div>
+      <app-navbar></app-navbar>
+    </div>
+    <div class="cardMain">
+      <!-- Use Angular *ngFor to loop through the data and generate cards -->
+      <div class="card" *ngFor="let card of userData">
+        <div class="card-body1">
+          <h5 class="card-title">
+            <p style="font-weight: 600; font-size: 16px">Name :</p>
+            <p style="font-size: 14px">{{ card.name }}</p>
+          </h5>
+          <h5 class="card-title">
+            <p style="font-weight: 600; font-size: 16px">UserID:-</p>
+            <p style="font-size: 14px">{{ card.userId }}</p>
+          </h5>
+          <h5 class="card-title">
+            <p style="font-weight: 600; font-size: 16px">Email:-</p>
+            <p style="font-size: 14px">{{ card.userEmail }}</p>
+          </h5>
+          <div class="icon-container">
+            <mat-icon
+              class="mat-icon-main"
+              svgIcon="Edit-up"
+              aria-hidden="false"
+              data-bs-toggle="modal"
+              data-bs-target="#editModal"
+              (click)="GetDataById(card.userId)"
+              style="cursor: pointer;"
+            ></mat-icon>
+            <mat-icon
+              class="mat-icon-main"
+              svgIcon="Del-up"
+              aria-hidden="false"
+              (click)="deleteItem(card.userId)"
+              style="cursor: pointer;"
+            ></mat-icon>
+          </div>
+          <!-- Add other card content here -->
+        </div>
+      </div>
+    </div>
+
+      <!-- Edit User Modal -->
+      <div class="modalfade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true" *ngIf="showEditModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header" style="display: flex; align-items: center;">
+              <h5 class="modal-title" id="editModalLabel" style="font-size:16px; font-weight: 500; padding-top: 8px;">Edit User Data</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeEditModal() "></button>
+            </div>
+            <div class="modal-body">
+              <!-- Form for editing user data -->
+              <!-- <form (submit)="saveChanges()"> -->
+                <div class="mb-3">
+                  <label for="editName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="editName" [(ngModel)]="editName">
+                </div>
+                <div class="mb-3">
+                  <label for="editEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="editEmail" [(ngModel)]="editEmail">
+                </div>
+                <button type="submit" class="btn btn-primary" (click)=" saveChanges()">Save Changes</button>
+              <!-- </form> -->
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      
+  </body>
+</html>
